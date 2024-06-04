@@ -3,14 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 import router
 
 app = FastAPI(
-    title="COFFELAB",
+    title="CAFELAB",
     description="API for integration with COFFELAB",
     version="1.0.00",
-    docs_url="/coffelab-api-swagger",
-    redoc_url="/coffelab-api-docs",
+    docs_url="/cafelab-api-swagger",
+    redoc_url="/cafelab-api-docs",
     servers=[
         {
-            "url": "https://coffelab-api.onrender.com/",
+            "url": "https://cafelab-api.onrender.com/",
             "description": "Production",
         },
         {
@@ -24,7 +24,7 @@ app = FastAPI(
 
 @app.get("/")
 async def read_root():
-    return "Welcome to coffelab´s API!, to check docs type /coffelab-api-swagger in the url"
+    return "Welcome to cafelab´s API!, to check docs type /cafelab-api-swagger in the url"
 
 
 app.include_router(router.user_router.router, prefix="/user", tags=["user"])
